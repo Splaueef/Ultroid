@@ -1,9 +1,9 @@
 # Ultroid - UserBot
 # Copyright (C) 2021-2026 TeamUltroid
 #
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# This file is a part of < https://github.com/Splaueef/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# <https://www.github.com/Splaueef/Ultroid/blob/main/LICENSE/>.
 
 import re
 import time
@@ -50,7 +50,7 @@ upage = 0
 
 SUP_BUTTONS = [
     [
-        Button.url("• Repo •", url="https://github.com/TeamUltroid/Ultroid"),
+        Button.url("• Repo •", url="https://github.com/Splaueef/Ultroid"),
         Button.url("• Support •", url="t.me/UltroidSupportChat"),
     ],
 ]
@@ -236,6 +236,7 @@ async def _(event):
     if not inline_pic():
         return await event.answer(f"Do '{HNDLR}update' to update..")
     repo = Repo.init()
+    repo.remote("upstream").set_url(Var.ULTROID_REPO_URL)
     changelog, tl_chnglog = await gen_chlog(
         repo, f"HEAD..upstream/{repo.active_branch}"
     )

@@ -1,9 +1,9 @@
 # Ultroid - UserBot
 # Copyright (C) 2021-2026 TeamUltroid
 #
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# This file is a part of < https://github.com/Splaueef/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# <https://www.github.com/Splaueef/Ultroid/blob/main/LICENSE/>.
 
 import base64
 import inspect
@@ -32,7 +32,7 @@ from . import _ult_cache
 
 SUP_BUTTONS = [
     [
-        Button.url("• Repo •", url="https://github.com/TeamUltroid/Ultroid"),
+        Button.url("• Repo •", url="https://github.com/Splaueef/Ultroid"),
         Button.url("• Support •", url="t.me/UltroidSupportChat"),
     ],
 ]
