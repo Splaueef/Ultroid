@@ -17,6 +17,20 @@ languages = {}
 PATH = "strings/strings/{}.yml"
 
 
+def _has_local_letters(text: Any) -> bool:
+    return isinstance(text, str) and any(
+        "а" <= ch.lower() <= "я" or ch in "іїєґІЇЄҐ" for ch in text
+    )
+
+
+def _needs_runtime_translation(value: Any, lang: str) -> bool:
+    if lang != "uk" or not isinstance(value, str):
+        return False
+    # Preserve command/help syntax, placeholders, links, and branding, but translate
+    # old Ukrainian entries that are still completely English-only.
+    return any(ch.isalpha() for ch in value) and not _has_local_letters(value)
+
+
 def load(file):
     if not file.endswith(".yml"):
         return
@@ -38,11 +52,18 @@ load(PATH.format(ULTConfig.lang))
 def get_string(key: str, _res: bool = True) -> Any:
     lang = ULTConfig.lang or "en"
     try:
-        return languages[lang][key]
+        value = languages[lang][key]
+        if _needs_runtime_translation(value, lang):
+            en_ = languages.get("en", {}).get(key) or value
+            tr = translate(en_, lang_tgt=lang).replace("\\ N", "\n")
+            if tr and en_.count("{}") == tr.count("{}"):
+                languages[lang][key] = tr
+                return tr
+        return value
     except KeyError:
         try:
             en_ = languages["en"][key]
-            tr = translate(en_, lang_tgt=lang).replace("\ N", "\n")
+            tr = translate(en_, lang_tgt=lang).replace("\\ N", "\n")
             if en_.count("{}") != tr.count("{}"):
                 tr = en_
             if languages.get(lang):

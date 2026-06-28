@@ -1,9 +1,9 @@
 # Ultroid - UserBot
 # Copyright (C) 2021-2026 TeamUltroid
 #
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# This file is a part of < https://github.com/Splaueef/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# <https://www.github.com/Splaueef/Ultroid/blob/main/LICENSE/>.
 
 import ast
 import asyncio
@@ -282,6 +282,7 @@ async def update(eve):
     repo = Repo()
     ac_br = repo.active_branch
     ups_rem = repo.remote("upstream")
+    ups_rem.set_url(Var.ULTROID_REPO_URL)
     if heroku_api:
         import heroku3
 

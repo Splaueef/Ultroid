@@ -8,17 +8,17 @@
 <b>A stable pluggable Telegram userbot + Voice & Video Call music bot, based on Telethon.</b>
 
 [![](https://img.shields.io/badge/Ultroid-v0.8-crimson)](#)
-[![Stars](https://img.shields.io/github/stars/TeamUltroid/Ultroid?style=flat-square&color=yellow)](https://github.com/TeamUltroid/Ultroid/stargazers)
-[![Forks](https://img.shields.io/github/forks/TeamUltroid/Ultroid?style=flat-square&color=orange)](https://github.com/TeamUltroid/Ultroid/fork)
-[![Size](https://img.shields.io/github/repo-size/TeamUltroid/Ultroid?style=flat-square&color=green)](https://github.com/TeamUltroid/Ultroid/)   
+[![Stars](https://img.shields.io/github/stars/Splaueef/Ultroid?style=flat-square&color=yellow)](https://github.com/Splaueef/Ultroid/stargazers)
+[![Forks](https://img.shields.io/github/forks/Splaueef/Ultroid?style=flat-square&color=orange)](https://github.com/Splaueef/Ultroid/fork)
+[![Size](https://img.shields.io/github/repo-size/Splaueef/Ultroid?style=flat-square&color=green)](https://github.com/Splaueef/Ultroid/)
 [![Python](https://img.shields.io/badge/Python-v3.10+-blue)](https://www.python.org/)
 [![CodeFactor](https://www.codefactor.io/repository/github/teamultroid/ultroid/badge/main)](https://www.codefactor.io/repository/github/teamultroid/ultroid/overview/main)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/TeamUltroid/Ultroid/graphs/commit-activity)
-[![Docker Pulls](https://img.shields.io/docker/pulls/theteamultroid/ultroid?style=flat-square)](https://img.shields.io/docker/pulls/theteamultroid/ultroid?style=flat-square)   
-[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/TeamUltroid/Ultroid)
-[![Contributors](https://img.shields.io/github/contributors/TeamUltroid/Ultroid?style=flat-square&color=green)](https://github.com/TeamUltroid/Ultroid/graphs/contributors)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Splaueef/Ultroid/graphs/commit-activity)
+[![Docker Pulls](https://img.shields.io/docker/pulls/theteamultroid/ultroid?style=flat-square)](https://img.shields.io/docker/pulls/theteamultroid/ultroid?style=flat-square)
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/Splaueef/Ultroid)
+[![Contributors](https://img.shields.io/github/contributors/Splaueef/Ultroid?style=flat-square&color=green)](https://github.com/Splaueef/Ultroid/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
-[![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/TeamUltroid/Ultroid/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/Splaueef/Ultroid/blob/main/LICENSE)
 ----
 
 # Deploy
@@ -26,17 +26,17 @@
 - [Okteto](#deploy-to-okteto)
 - [Local Machine](#deploy-locally)
 
-# Documentation 
+# Documentation
 [![Documentation](https://img.shields.io/badge/Documentation-Ultroid-blue)](http://ultroid.tech/)
 
-# Tutorial 
+# Tutorial
 - Full Tutorial - [![Full Tutorial](https://img.shields.io/badge/Watch%20Now-blue)](https://www.youtube.com/watch?v=0wAV7pUzhDQ)
 
 - Tutorial to get Redis URL and password - [here.](./resources/extras/redistut.md)
 ---
 
 ## Deploy to Heroku
-Get the [Necessary Variables](#Necessary-Variables) and then click the button below!  
+Get the [Necessary Variables](#Necessary-Variables) and then click the button below!
 
 <summary>Deploy To Heroku</summary>
 <p>
@@ -48,7 +48,7 @@ Get the [Necessary Variables](#Necessary-Variables) and then click the button be
 ## Deploy to Okteto
 Get the [Necessary Variables](#Necessary-Variables) and then click the button below!
 
-[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/TeamUltroid/Ultroid)
+[![Develop on Okteto](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com/deploy?repository=https://github.com/Splaueef/Ultroid)
 
 ## Deploy Locally
 - [Traditional Method](#local-deploy---traditional-method)
@@ -62,14 +62,14 @@ Get the [Necessary Variables](#Necessary-Variables) and then click the button be
 
 ### Local Deploy - Traditional Method
 - Get your [Necessary Variables](#Necessary-Variables)
-- Clone the repository:    
-`git clone https://github.com/TeamUltroid/Ultroid.git`
-- Go to the cloned folder:    
+- Clone the repository:
+`git clone https://github.com/Splaueef/Ultroid.git`
+- Go to the cloned folder:
 `cd Ultroid`
-- Create a virtual env:      
+- Create a virtual env:
 `virtualenv -p /usr/bin/python3 venv`
 `. ./venv/bin/activate`
-- Install the requirements:      
+- Install the requirements:
 `pip(3) install -U -r re*/st*/optional-requirements.txt`
 `pip(3) install -U -r requirements.txt`
 - Generate your `SESSION`:
@@ -81,7 +81,7 @@ Get the [Necessary Variables](#Necessary-Variables) and then click the button be
     `wget -O session.py https://git.io/JY9JI && python session.py`
   - For Windows Users:
     `cd desktop ; wget https://git.io/JY9JI -o ultroid.py ; python ultroid.py`
-- Fill your details in a `.env` file, as given in [`.env.sample`](https://github.com/TeamUltroid/Ultroid/blob/main/.env.sample).
+- Fill your details in a `.env` file, as given in [`.env.sample`](https://github.com/Splaueef/Ultroid/blob/main/.env.sample).
 (You can either edit and rename the file or make a new file named `.env`.)
 - Run the bot:
   - Linux Users:
@@ -104,7 +104,7 @@ One of the following database:
 
 ## Session String
 Different ways to get your `SESSION`:
-* [![Run on Repl.it](https://replit.com/badge/github/TeamUltroid/Ultroid)](https://replit.com/@TeamUltroid/UltroidStringSession)
+* [![Run on Repl.it](https://replit.com/badge/github/Splaueef/Ultroid)](https://replit.com/@Splaueef/UltroidStringSession)
 * Linux : `wget -O session.py https://git.io/JY9JI && python3 session.py`
 * PowerShell : `cd desktop ; wget https://git.io/JY9JI ; python ultroid.py`
 * Termux : `wget -O session.py https://git.io/JY9JI && python session.py`
@@ -134,8 +134,8 @@ Different ways to get your `SESSION`:
 
 ## Contributors
 
-<a href="https://github.com/TeamUltroid/Ultroid/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=TeamUltroid/Ultroid" />
+<a href="https://github.com/Splaueef/Ultroid/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Splaueef/Ultroid" />
 </a>
 
 We are highly grateful for all the contributions made by our amazing community! ❤️
@@ -143,7 +143,7 @@ We are highly grateful for all the contributions made by our amazing community! 
 ---
 
 # License
-[![License](https://www.gnu.org/graphics/agplv3-155x51.png)](LICENSE)   
+[![License](https://www.gnu.org/graphics/agplv3-155x51.png)](LICENSE)
 Ultroid is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) v3 or later.
 
 
@@ -153,4 +153,4 @@ Ultroid is licensed under [GNU Affero General Public License](https://www.gnu.or
 * [Lonami](https://github.com/LonamiWebs/) for [Telethon.](https://github.com/LonamiWebs/Telethon)
 * [MarshalX](https://github.com/MarshalX) for [PyTgCalls.](https://github.com/MarshalX/tgcalls)
 
-> Made with 💕 by [@TeamUltroid](https://t.me/TeamUltroid).    
+> Made with 💕 by [@TeamUltroid](https://t.me/TeamUltroid).
