@@ -1,9 +1,9 @@
 # Ultroid - UserBot
 # Copyright (C) 2021-2026 TeamUltroid
 #
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# This file is a part of < https://github.com/Splaueef/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# <https://www.github.com/Splaueef/Ultroid/blob/main/LICENSE/>.
 
 from telethon.errors import (
     BotMethodInvalidError,
@@ -15,17 +15,17 @@ from . import LOG_CHANNEL, LOGS, Button, asst, eor, get_string, ultroid_cmd
 
 REPOMSG = """
 • **ULTROID USERBOT** •\n
-• Repo - [Click Here](https://github.com/TeamUltroid/Ultroid)
-• Addons - [Click Here](https://github.com/TeamUltroid/UltroidAddons)
+• Repo - [Click Here](https://github.com/Splaueef/Ultroid)
+• Addons - [Click Here](https://github.com/Splaueef/UltroidAddons)
 • Support - @UltroidSupportChat
 """
 
 RP_BUTTONS = [
     [
-        Button.url(get_string("bot_3"), "https://github.com/TeamUltroid/Ultroid"),
-        Button.url("Addons", "https://github.com/TeamUltroid/UltroidAddons"),
+        Button.url(get_string("bot_3"), "https://github.com/Splaueef/Ultroid"),
+        Button.url(get_string("btn_addons"), "https://github.com/Splaueef/UltroidAddons"),
     ],
-    [Button.url("Support Group", "t.me/UltroidSupportChat")],
+    [Button.url(get_string("btn_support_group"), "t.me/UltroidSupportChat")],
 ]
 
 ULTSTRING = """🎇 **Thanks for Deploying Ultroid Userbot!**
@@ -55,7 +55,7 @@ async def repify(e):
 
 @ultroid_cmd(pattern="ultroid$")
 async def useUltroid(rs):
-    button = Button.inline("Start >>", "initft_2")
+    button = Button.inline(get_string("btn_start"), "initft_2")
     msg = await asst.send_message(
         LOG_CHANNEL,
         ULTSTRING,

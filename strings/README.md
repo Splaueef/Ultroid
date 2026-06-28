@@ -3,7 +3,7 @@
 
 | Code | Language | Translated | Remaining |
 |----|-------|-------|---|
-| en | English [English] | 494 | 0 |
+| en | English [English] | 507 | 0 |
 | ar | Arabic [العربية] | 490 | 4 |
 | az | Azerbaijan [Azərbaycan] | 490 | 4 |
 | bn | Bengali [বাংলা] | 490 | 4 |
@@ -26,6 +26,7 @@
 | si | sinhala [සිංහල] | 490 | 4 |
 | ta | தமிழ் [தமிழ்] | 490 | 4 |
 | tr | Turkish [Türk] | 490 | 4 |
+| uk | Ukrainian [Українська] | 507 | 0 |
 | uz | Uzbekcha [Uzbekcha] | 490 | 4 |
 
 

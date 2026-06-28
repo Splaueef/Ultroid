@@ -1,7 +1,7 @@
 # Ultroid - UserBot
 # Copyright (C) 2021-2026 TeamUltroid
 #
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# This file is a part of < https://github.com/Splaueef/Ultroid/ >
 # PLease read the GNU Affero General Public License in
 # <https://github.com/TeamUltroid/pyUltroid/blob/main/LICENSE>.
 
@@ -232,9 +232,6 @@ if run_as_module:
     @run_async
     def gen_chlog(repo, diff):
         """Generate Changelogs..."""
-        UPSTREAM_REPO_URL = (
-            Repo().remotes[0].config_reader.get("url").replace(".git", "")
-        )
         ac_br = repo.active_branch.name
         ch_log = tldr_log = ""
         ch = f"<b>Ultroid {ultroid_version} updates for <a href={UPSTREAM_REPO_URL}/tree/{ac_br}>[{ac_br}]</a>:</b>"
@@ -272,14 +269,13 @@ async def bash(cmd, run_code=0):
 # Will add in class
 
 
+UPSTREAM_REPO_URL = "https://github.com/Splaueef/Ultroid"
+
+
 async def updater():
     from .. import LOGS
 
-    try:
-        off_repo = Repo().remotes[0].config_reader.get("url").replace(".git", "")
-    except Exception as er:
-        LOGS.exception(er)
-        return
+    off_repo = UPSTREAM_REPO_URL
     try:
         repo = Repo()
     except NoSuchPathError as error:
@@ -298,8 +294,10 @@ async def updater():
         repo.heads.main.set_tracking_branch(origin.refs.main)
         repo.heads.main.checkout(True)
     ac_br = repo.active_branch.name
-    repo.create_remote("upstream", off_repo) if "upstream" not in repo.remotes else None
+    if "upstream" not in repo.remotes:
+        repo.create_remote("upstream", off_repo)
     ups_rem = repo.remote("upstream")
+    ups_rem.set_url(off_repo)
     ups_rem.fetch(ac_br)
     changelog, tl_chnglog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     return bool(changelog)

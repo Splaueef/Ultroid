@@ -330,7 +330,7 @@ async def changes(okk):
     match = okk.data_match.group(1).decode("utf-8")
     await okk.answer(get_string("clst_3"))
     repo = Repo.init()
-    button = [[Button.inline("Update Now", data="updatenow")]]
+    button = [[Button.inline(get_string("btn_update_now"), data="updatenow")]]
     changelog, tl_chnglog = await gen_chlog(
         repo, f"HEAD..upstream/{repo.active_branch}"
     )

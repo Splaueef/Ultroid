@@ -1,9 +1,9 @@
 # Ultroid - UserBot
 # Copyright (C) 2021-2026 TeamUltroid
 #
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
+# This file is a part of < https://github.com/Splaueef/Ultroid/ >
 # PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# <https://www.github.com/Splaueef/Ultroid/blob/main/LICENSE/>.
 
 from . import get_help
 
@@ -70,7 +70,7 @@ def ULTPIC():
 
 buttons = [
     [
-        Button.url(get_string("bot_3"), "https://github.com/TeamUltroid/Ultroid"),
+        Button.url(get_string("bot_3"), "https://github.com/Splaueef/Ultroid"),
         Button.url(get_string("bot_4"), "t.me/UltroidSupportChat"),
     ]
 ]
@@ -324,7 +324,10 @@ async def _(e):
         "fast" in e.pattern_match.group(1).strip()
         or "soft" in e.pattern_match.group(1).strip()
     ):
-        await bash("git pull -f && pip3 install -r requirements.txt")
+        await bash(
+            f"git pull -f https://github.com/Splaueef/Ultroid "
+            f"{Repo.init().active_branch} && pip3 install -r requirements.txt"
+        )
         await bash("pip3 install -r requirements.txt --break-system-packages")
         call_back()
         await xx.edit(get_string("upd_7"))
@@ -338,7 +341,7 @@ async def _(e):
             ULTPIC(),
             caption="• **Update Available** •",
             force_document=False,
-            buttons=Button.inline("Changelogs", data="changes"),
+            buttons=Button.inline(get_string("btn_changelogs"), data="changes"),
         )
         Link = x.message_link
         await xx.edit(
@@ -348,7 +351,7 @@ async def _(e):
         )
     else:
         await xx.edit(
-            f'<code>Your BOT is </code><strong>up-to-date</strong><code> with </code><strong><a href="https://github.com/TeamUltroid/Ultroid/tree/{branch}">[{branch}]</a></strong>',
+            f'<code>Your BOT is </code><strong>up-to-date</strong><code> with </code><strong><a href="https://github.com/Splaueef/Ultroid/tree/{branch}">[{branch}]</a></strong>',
             parse_mode="html",
             link_preview=False,
         )
@@ -362,5 +365,5 @@ async def updava(event):
         ULTPIC(),
         caption="• **Update Available** •",
         force_document=False,
-        buttons=Button.inline("Changelogs", data="changes"),
+        buttons=Button.inline(get_string("btn_changelogs"), data="changes"),
     )
