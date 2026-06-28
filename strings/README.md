@@ -26,6 +26,7 @@
 | si | sinhala [සිංහල] | 490 | 4 |
 | ta | தமிழ் [தமிழ்] | 490 | 4 |
 | tr | Turkish [Türk] | 490 | 4 |
+| uk | Ukrainian [Українська] | 494 | 0 |
 | uz | Uzbekcha [Uzbekcha] | 490 | 4 |
 
 
